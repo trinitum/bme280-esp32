@@ -1,0 +1,37 @@
+menu "BME280 Example Configuration"
+
+    menu "I2C"
+        config I2C_SCL
+            int "SCL GPIO Num"
+            default 22
+            help
+                GPIO number for I2C clock line.
+
+        config I2C_SDA
+            int "SDA GPIO Num"
+            default 21
+            help
+                GPIO number for I2C data line.
+
+        config I2C_PORT_NUM
+            int "Port Number"
+            default 0
+            help
+                Port number for I2C device.
+
+        config I2C_FREQUENCY
+            int "I2C Frequency"
+            default 100000
+            help
+                I2C Speed.
+    endmenu
+
+    menu "BME280 Sensor"
+        config BME280_ADDRESS
+            hex "BME280 I2C Address"
+            default 0x76
+            help
+                I2C address of BME280 sensor
+    endmenu
+
+endmenu
